@@ -21,7 +21,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  height: 125dvh;
+  min-height: 1100px;
   width: 100%;
   background-image: url("images/doodle.png");
   z-index: -1;
@@ -124,7 +124,7 @@ footer a {
 
 @media only screen and (min-width: 680px) {
   .bg {
-    height: 110dvh;
+    min-height: 1200px;
   }
   .container .right {
     height: 384px;
@@ -137,7 +137,7 @@ footer a {
 }
 @media only screen and (min-width: 920px) {
   .bg {
-    height: 100dvh;
+    min-height: 1100px;
   }
   .container {
     flex-direction: row;
@@ -157,17 +157,5 @@ footer a {
   }
   .container .left .cta a {
     font-size: 22px;
-  }
-}
-@media only screen and (min-width: 1080px) {
-  .bg {
-    height: 130dvh;
-  }
-  .container .left input[type=color] {
-    width: 80px;
-    height: 80px;
-  }
-  .container .left .cta a {
-    font-size: 24px;
   }
 }/*# sourceMappingURL=style.css.map */
