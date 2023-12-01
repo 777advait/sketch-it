@@ -1,0 +1,210 @@
+@font-face {
+    font-family: homework;
+    src: url("HOMEWORK.ttf");
+}
+@font-face {
+    font-family: victor;
+    src: url("VictorSerifTrial-40Regular.otf");
+}
+
+:root {
+    --primary: #333;
+}
+
+body {
+    padding: 0;
+    border: 0;
+    font-size: 62.5%;
+    font-family: "homework";
+}
+
+.bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 125dvh;
+    width: 100%;
+    background-image: url("images/doodle.png");
+    z-index: -1;
+    opacity: .05;
+}
+
+.wrapper {
+    width: 75%;
+    margin: 5rem auto;
+    background-color: rgba($color: #333, $alpha: .15);
+    padding: 3rem;
+    border-radius: 15px;
+}
+
+header h1{
+    font-size: 75px;
+    margin: 0;
+    margin-bottom: 5rem;
+    text-align: center;
+    color: var(--primary);
+}
+
+.container {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+
+    .left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+
+        input[type='color'] {
+            width: 50px;
+            height: 50px;
+            border: none;
+            background: none;
+        }
+
+        input[type='color']::-webkit-color-swatch-wrapper {
+            padding: 0;
+        }
+    
+        input[type='color']::-webkit-color-swatch {
+            border: none;
+            border-radius: 50px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+
+        .cta {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+
+            .active {
+                background-color: var(--primary);
+                color: white;
+            }
+            
+            a {
+                text-decoration: none;
+                color: var(--primary);
+                font-size: 18px;
+                border: 2px solid var(--primary);
+                padding: .5rem 1rem;
+                border-radius: 10px;
+                transition: all .3s;
+
+                &:hover {
+                    background-color: var(--primary);
+                    color: white;
+                }
+            }
+        }
+    }
+
+    .right {
+        display: grid;
+        grid-template-rows: repeat(16, auto);
+        grid-template-areas: ". . . . . . . . . . . . . . . .";
+        height: 256px;
+        width: 256px;
+        border: 1px solid rgba($color: gray, $alpha: .5);
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+        .grid-el {
+            width: 14px;
+            height: 14px;
+            border: 1px solid rgba($color: gray, $alpha: .5);
+        }
+    }
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    font-family: victor;
+    font-size: 14px;
+    
+    a {
+        color: var(--primary);
+    }
+}
+
+
+@media only screen and (min-width: 680px) {
+    .bg {
+        height: 110dvh;
+    }
+
+    .container {
+        .right {
+            height: 384px;
+            width: 384px;
+
+            .grid-el {
+                width: 22px;
+                height: 22px;
+            }
+        }
+    }
+}
+
+
+@media only screen and (min-width: 920px) {
+    .bg {
+        height: 100dvh;
+    }
+
+    .container {
+        flex-direction: row;
+        justify-content: space-around;
+        .right {
+            height: 512px;
+            width: 512px;
+
+            .grid-el {
+                width: 30px;
+                height: 30px;
+            }
+        }
+
+        .left {
+            input[type='color'] {
+                width: 70px;
+                height: 70px;
+            }
+
+            .cta {
+                a {
+                    font-size: 22px;
+                }
+            }
+        }
+    }
+}
+
+
+@media only screen and (min-width: 1080px) {
+    .bg {
+        height: 130dvh;
+    }
+
+    .container {
+        .left {
+            input[type='color'] {
+                width: 80px;
+                height: 80px;
+            }
+    
+            .cta {
+                a {
+                    font-size: 24px;
+                }
+            }
+        }
+    }
+}
